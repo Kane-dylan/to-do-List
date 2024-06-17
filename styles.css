@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+  background-color: black;
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+.task {
+  display: flex;
+  text-align: end;
+}
+
+#title {
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.15em solid green;
+  animation: typing 2s steps(20, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: green;
+  }
+}
+
+
+input,
+button {
+  background-color: black;
+  color: green;
+  border: 1px solid green;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1em;
+  width: calc(100% - 24px);
+  box-sizing: border-box;
+}
+
+#addTaskButton {
+  background-color: black;
+  color: green;
+  border: 1px solid green;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1em;
+  width: calc(25% - 24px);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+}
+
+li {
+  background-color: black;
+  color: green;
+  border: 1px solid green;
+  padding: 10px;
+  margin: 5px;
+  font-size: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li button {
+  background-color: black;
+  color: red;
+  border: 1px solid red;
+  padding: 5px;
+  width: 100px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.theme-toggle {
+  position: absolute;
+  width: 150px;
+  top: 2%;
+  right: 2%;
+}
+
+.theme-ubuntu {
+  background-color: #300a24;
+  color: #e95420;
+}
+
+.theme-ubuntu input,
+.theme-ubuntu li,
+.theme-ubuntu #addTaskButton,
+.theme-ubuntu button {
+  background-color: #300a24;
+  color: #e95420;
+  border: 1px solid #e95420;
+}
+
+.theme-gray {
+  background-color: #333;
+  color: #ccc;
+}
+
+.theme-gray input,
+.theme-gray li,
+.theme-gray #addTaskButton,
+.theme-gray button {
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid #ccc;
+}
