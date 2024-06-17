@@ -5,6 +5,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeButton = document.getElementById("themeButton");
   const body = document.body;
 
+  // Load tasks from localStorage
+  const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  savedTasks.forEach((taskText) => {
+    const li = document.createElement("li");
+    li.textContent = taskText;
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", () => {
+      taskList.removeChild(li);
+      saveTasks();
+    });
+
+    li.appendChild(deleteButton);
+    taskList.appendChild(li);
+  });
+
   addTaskButton.addEventListener("click", () => {
     const taskText = taskInput.value.trim();
     if (taskText !== "") {
@@ -15,11 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.textContent = "Delete";
       deleteButton.addEventListener("click", () => {
         taskList.removeChild(li);
+        saveTasks();
       });
 
       li.appendChild(deleteButton);
       taskList.appendChild(li);
       taskInput.value = "";
+      saveTasks();
     }
   });
 
@@ -34,8 +53,27 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove("theme-terminal");
       body.classList.add("theme-ubuntu");
     }
+    saveTheme();
   });
 
-  // Set initial theme
-  body.classList.add("theme-terminal");
+  // Load theme from localStorage
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    body.classList.add(savedTheme);
+  } else {
+    body.classList.add("theme-terminal");
+  }
+
+  function saveTasks() {
+    const tasks = [];
+    taskList.querySelectorAll("li").forEach((li) => {
+      tasks.push(li.firstChild.textContent);
+    });
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }
+
+  function saveTheme() {
+    const currentTheme = body.classList[0];
+    localStorage.setItem("theme", currentTheme);
+  }
 });
