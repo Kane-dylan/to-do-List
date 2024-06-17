@@ -44,10 +44,9 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: green;
+    border-color: currentColor;
   }
 }
-
 
 input,
 button {
@@ -93,12 +92,18 @@ li {
 
 li button {
   background-color: black;
+  padding: 5px;
+  width: 57px;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: transparent;
   color: red;
   border: 1px solid red;
-  padding: 5px;
-  width: 100px;
-  margin-left: 10px;
-  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .theme-toggle {
