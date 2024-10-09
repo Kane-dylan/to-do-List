@@ -17,6 +17,17 @@ The **Terminal-Themed To-Do List** provides a unique, distraction-free way to ke
 - **Clear All**: Clear all the tasks with a single click.
 - **Minimalistic Design**: Terminal-style interface with simple colors and fonts.
 
+## Preview 
+<h3>Green-Terminal</h3>
+<img width='500px' src='https://github.com/user-attachments/assets/adcbfa94-ef2c-4213-926e-2ce41b17a58b'/>
+<h3>Ubuntu-Terminal</h3>
+<img width='500px' src='https://github.com/user-attachments/assets/ec46a5c4-6f45-4078-8bc4-58a790720fd5'/>
+<h3>Black&White-Terminal</h3>
+<img width='500px' src='https://github.com/user-attachments/assets/508fd787-b9d6-4af7-a7c3-fb0beef05a56'/>
+
+
+
+
 ## 🎨 Terminal Theme
 
 This project’s aesthetics replicate the look and feel of a command-line interface, featuring a dark background and bright-colored fonts to make the text pop. If you're a terminal enthusiast, you'll feel right at home.
